@@ -318,6 +318,7 @@ func Client(gamePeer, httpPeer *config.Peer, proxyDNS, localDNS string, rules []
 		},
 	}...)
 	options.Options.Route.Rules = append(options.Options.Route.Rules, rules...)
+	options.Options.Route.Final = "direct"
 	// http
 	if httpPeer != nil && httpPeer.Name != gamePeer.Name {
 		out := getOUt(httpPeer)
